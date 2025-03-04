@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.container{
+    max-width: 300px;
+    margin: 50px auto;
+    
+}
+
+
+    </style>
+</head>
+
+<body>
+   
+    <div class="container">
+        <h1 id="title" style="text-align: center;">0</h1>
+        <div class="btn-grp">
+        <button id="inc">Increment</button>
+        <button id="reset">Reset</button>
+        <button id="dec">Decrement</button>
+    </div>
+    </div>
+
+
+
+
+
+<script>
+
+let mainTitle= document.getElementById("title");
+let btnInc= document.getElementById("inc");
+let btnReset= document.getElementById("reset");
+let btnDec= document.getElementById("dec");
+
+
+let currVal=0;
+
+btnInc.addEventListener("click", ()=>{
+    // currVal++;
+    // mainTitle.textContent=currVal;
+   let count=1;
+   let interval = setInterval(()=>{
+    if (count <=10){
+        mainTitle.innerText =count;
+        count++
+    }
+    else{
+        clearInterval(interval)
+    }
+   }, 100);
+
+})
+
+
+
+
+
+btnDec.addEventListener("click", ()=>{
+    // currVal--;
+    // mainTitle.textContent=currVal;
+
+    let count=10;
+    let interval = setInterval(()=>{
+        if(count >=1){
+            mainTitle.innerText= count;
+            count--;
+
+        }
+        else{
+            clearInterval(interval)
+        }
+    },100);
+})
+
+
+btnReset.addEventListener("click", ()=>{
+    currVal=0;
+    mainTitle.textContent=currVal;
+
+})
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
